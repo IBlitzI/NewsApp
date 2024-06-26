@@ -1,0 +1,30 @@
+.news-card {
+  border-radius: 5px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.dummy-card {
+  margin-bottom: 20px;
+}
+
+.dummy-card img {
+  height: 200px;
+  object-fit: cover;
+}

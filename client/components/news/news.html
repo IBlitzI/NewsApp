@@ -1,0 +1,35 @@
+<template name="news">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          {{#each newsItems}}
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 news-card">
+                <img class="card-img-top" src="{{this.image}}" alt="News Image" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title">{{this.name}}</h5>
+                  <p class="card-text">{{truncate this.description 100}}</p>
+                  <a href="{{this.url}}" target="_blank" class="btn btn-primary">Read more</a>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <small class="text-muted">{{this.date}}</small>
+                    <div class="d-flex align-items-center">
+                      <span class="mr-2">{{this.source.name}}</span>
+                      {{#if this.author}}
+                        <span class="text-muted">by {{this.author}}</span>
+                      {{/if}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-md-4">
+        
+        {{> locationFilter}}
+      </div>
+    </div>
+  </div>
+</template>

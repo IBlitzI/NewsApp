@@ -1,0 +1,10 @@
+.news-container {
+    margin-top: 20px;
+  }
+  
+  .news-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
