@@ -1,0 +1,45 @@
+.carousel-caption {
+  position: static;
+  text-align: left;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-family: IBM Plex Serif;
+  
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-item img {
+  flex: 0 0 200px; /* Resmin genişliğini küçültüyoruz */
+  height: 150px; /* Resmin yüksekliğini küçültüyoruz */
+  object-fit: cover; /* Resmin içeriğini kapsamasını sağlıyoruz */
+}
+
+.carousel-item .carousel-caption {
+  flex: 1;
+  padding-left: 10px;
+  padding-top:0;
+}
+
+.container .row {
+  display: flex;
+  align-items: flex-start; /* Elemanların üst hizalanmasını sağlıyoruz */
+  justify-content: space-between;
+}
+
+.carousel-item .carousel-caption h5 {
+  font-size: 1em; /* Başlık boyutunu ayarlıyoruz */
+  margin-bottom: px;
+  font-weight: bold;
+}
+
+.carousel-item .carousel-caption p {
+  font-size: 1em; /* Metin boyutunu ayarlıyoruz */
+  margin-bottom: 0;
+}

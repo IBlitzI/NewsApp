@@ -1,24 +1,38 @@
-
 <template name="navbar">
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-brand">
-        
+  <nav class="navbar navbar-expand-lg navbar-white bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#">
         <img src="/assets/logo.png" alt="Logo" class="navbar-logo">
-      </div>
-      <div class="navbar-items">
-        <a href="#" class="nav-item" data-tag="general">General</a>
-        <a href="#" class="nav-item" data-tag="business">Business</a>
-        <a href="#" class="nav-item" data-tag="sports">Sports</a>
-        <a href="#" class="nav-item" data-tag="world">World</a>
-        <a href="#" class="nav-item" data-tag="technology">Technology</a>
-        <a href="#" class="nav-item" data-tag="entertainment">Entertainment</a>
-      </div>
-      <div class="navbar-icons">
-        
-        <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
-        <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
-        <a href="#" class="nav-icon"><i class="fas fa-bars"></i></a>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tag="general">General</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tag="business">Business</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tag="sports">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tag="world">World</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tag="technology">Technology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-tag="entertainment">Entertainment</a>
+          </li>
+        </ul>
+        <div class="navbar-icons">
+          <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+          <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+          <a href="#" class="nav-icon"><i class="fas fa-bars"></i></a>
+        </div>
       </div>
     </div>
   </nav>

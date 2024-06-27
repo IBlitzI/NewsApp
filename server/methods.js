@@ -5,7 +5,7 @@ import { getNewsData } from '../imports/api/newsApi.js';
 
 Meteor.methods({
   'fetchNews'(tag) {
-    check(tag, String);  // Gelen parametrenin geçerli bir string olup olmadığını kontrol eder
+    check(tag, String);  
 
     try {
       const newsData = getNewsData(tag);

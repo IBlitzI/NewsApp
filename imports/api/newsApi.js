@@ -3,7 +3,7 @@ import { HTTP } from 'meteor/http';
 const API_KEY = '1Noer8MT9AohiaGWe56pbk:77xWoDbR7HQvo4Dtfb2bNJ';
 const BASE_URL = 'https://api.collectapi.com/news/getNews';
 
-export const getNewsData = (tag='general') => {
+export const getNewsData = (tag) => {
   try {
     const response = HTTP.call('GET', BASE_URL, {
       headers: {
@@ -13,6 +13,8 @@ export const getNewsData = (tag='general') => {
       params: {
         country: 'tr',
         tag: tag
+        
+        
       }
     });
 
@@ -27,17 +29,18 @@ export const getNewsData = (tag='general') => {
     throw new Meteor.Error('api-fetch-failed', 'Failed to fetch news data');
   }
 };
-export function getNewsByLocation(location) {
+
+export const getNewsByLocation = (location) => {
   const url = `https://api.collectapi.com/news/getNewsLocal?city=${location}`;
   const headers = {
-    'Authorization': 'YOUR_API_KEY',
+    'Authorization': `apikey ${API_KEY}`,
     'Content-Type': 'application/json'
   };
 
   try {
     const response = HTTP.get(url, { headers });
     if (response.statusCode === 200) {
-      return response.data;
+      return response.data.result;  
     } else {
       throw new Error(`API response status code: ${response.statusCode}`);
     }
@@ -45,4 +48,4 @@ export function getNewsByLocation(location) {
     console.error('API error:', error);
     throw new Meteor.Error('api-fetch-failed', error.message);
   }
-}
+};

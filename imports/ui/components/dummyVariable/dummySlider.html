@@ -1,0 +1,40 @@
+<template name="dummySlider">
+  <div class="container mt-5">
+    <h3>Editor's Picks <span class="fa fa-star"></span></h3>
+    <div id="newsCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-6 d-flex align-items-start">
+              <img src="/assets/slider1.png" class="d-block" alt="News 1">
+              <div class="carousel-caption">
+                <h5>Serological surveys are being conducted to test for coronavirus antibodies. How useful are they?</h5>
+                <p>The authorities are hoping to find that a substantial proportion of the population has already been infected with the virus – and so is immune.</p>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-start">
+              <img src="/assets/slider2.png" class="d-block" alt="News 2">
+              <div class="carousel-caption">
+                <h5>Making a mark in Asia: East Bengal’s 2003 Asean Cup win – a defining moment for Indian club football</h5>
+                <p>Beating some of the finest teams from South Asia, East Bengal became the first Indian club to win an officially recognised Asian football tournament.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Gösterge barı -->
+      <ol class="carousel-indicators">
+        <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#newsCarousel" data-slide-to="1"></li>
+      </ol>
+      <a class="carousel-control-prev" href="#newsCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#newsCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</template>

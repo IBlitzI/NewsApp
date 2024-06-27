@@ -8,6 +8,8 @@ import '../imports/ui/components/dummyVariable/articlePreview.html';
 import '../imports/ui/components/dummyVariable/articlePreview.css';
 import '../imports/ui/components/footer/footer.html';
 import '../imports/ui/components/footer/footer.css';
+import '../imports/ui/components/dummyVariable/dummySlider.html'
+import '../imports/ui/components/dummyVariable/dummySlider.css'
 
 
 
