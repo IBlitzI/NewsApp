@@ -31,14 +31,16 @@ export const getNewsData = (tag) => {
 };
 
 export const getNewsByLocation = (location) => {
-  const url = `https://api.collectapi.com/news/getNewsLocal?city=${location}`;
+  const url = `https://api.collectapi.com/news/getNewsLocal?city=${location}&country=tr&tag=general`;
   const headers = {
     'Authorization': `apikey ${API_KEY}`,
     'Content-Type': 'application/json'
   };
-
   try {
-    const response = HTTP.get(url, { headers });
+    const response = HTTP.call('GET', url, {
+      headers: headers
+    });
+    
     if (response.statusCode === 200) {
       return response.data.result;  
     } else {

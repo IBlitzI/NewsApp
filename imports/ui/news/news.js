@@ -2,7 +2,8 @@ import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
 import './news.html';
 import './news.css';
-import './locationFilter.html';
+import '../components/locationFilter/locationFilter.html';
+import '../components/locationFilter/locationFilter.js'
 
 Template.registerHelper('truncate', function(text, length) {
   if (text.length > length) {
@@ -11,34 +12,32 @@ Template.registerHelper('truncate', function(text, length) {
   return text;
 });
 
+Template.news.onCreated(function() {
+  this.viewMore = new ReactiveVar(false); 
+});
+
 Template.news.helpers({
   newsItems() {
     const newsData = Session.get('newsData');
-    return Array.isArray(newsData) ? newsData.slice(0, 5) : []; // Sadece ilk 4 haber
+    const viewMore = Template.instance().viewMore.get();
+    if (Array.isArray(newsData)) {
+      return viewMore ? newsData : newsData.slice(0, 5); 
+    }
+    return [];
+  },
+  isViewMoreVisible() {
+    const newsData = Session.get('newsData');
+    return Array.isArray(newsData) && newsData.length > 4;
+  },
+  viewMoreText() {
+    return Template.instance().viewMore.get() ? 'View Less' : 'View More';
   }
 });
 
 Template.news.events({
   'click #view-more'(event, templateInstance) {
-    // "View More" butonuna tıklandığında yapılacak işlemler
-    console.log('View More button clicked');
-    // Burada daha fazla haber yükleme işlemleri veya başka bir eylem eklenebilir
-  }
-});
-
-Template.locationFilter.events({
-  'submit #location-form'(event) {
     event.preventDefault();
-    const location = event.target.location.value.trim();
-    
-    Meteor.call('getNewsByLocation', location, (error, result) => {
-      if (error) {
-        console.error('Error:', error);
-        alert('Error: ' + error.reason);
-      } else {
-        console.log('API result:', result);
-        Session.set('newsData', result);
-      }
-    });
+    const viewMore = templateInstance.viewMore.get();
+    templateInstance.viewMore.set(!viewMore); 
   }
 });

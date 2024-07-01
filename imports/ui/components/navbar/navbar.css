@@ -1,3 +1,4 @@
+/* Navbar genel stilleri */
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #ccc;
@@ -7,6 +8,7 @@
   align-items: center;
 }
 
+/* Navbar içerik konteyneri */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -14,17 +16,19 @@
   width: 100%;
 }
 
+/* Navbar marka/logo */
 .navbar-brand {
   display: flex;
   align-items: center;
 }
 
+/* Navbar logo boyutları */
 .navbar-logo {
   height: 42px;
   width: 47px;
-
 }
 
+/* Navbar öğeleri */
 .navbar-items {
   display: flex;
   align-items: center;
@@ -32,32 +36,45 @@
   justify-content: center;
 }
 
+/* Navbar öğe stilleri */
 .nav-item {
   margin: 0 15px;
   text-decoration: none;
-  color: #000;
-  font-weight: bold;
+  font-family: 'Nunito Sans', sans-serif; /* Nunito Sans benzeri font */
+  color: black; /* Tag rengi siyah */
+}
+.nav-item .nav-link {
+  color: black; /* Tag rengini siyah yap */
+  font-family: 'Nunito Sans', sans-serif; /* Yazı tipini Nunito Sans veya benzeri yap */
+  text-decoration: none;
+  font-size: 85%;
 }
 
+/* Navbar öğe hover stilleri */
 .nav-item:hover {
-  color: #007BFF;
+  color: #000;
 }
 
+/* Navbar ikon konteyneri */
 .navbar-icons {
   display: flex;
   align-items: center;
+  margin-left: auto; /* İkonları sağa yasla */
 }
 
+/* Navbar ikon stilleri */
 .nav-icon {
-  margin-left: 15px;
+  margin-left: 30px; /* İkonlar arası mesafe */
   color: #000;
   text-decoration: none;
 }
 
+/* Navbar ikon font boyutu */
 .nav-icon i {
   font-size: 20px;
 }
 
+/* Navbar ikon hover stilleri */
 .nav-icon:hover {
-  color: #007BFF; 
+  color: #000; 
 }

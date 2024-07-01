@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { HTTP } from 'meteor/http';
-import { getNewsData } from '../imports/api/newsApi.js';
+import { getNewsData,getNewsByLocation } from '../imports/api/newsApi.js';
 
 Meteor.methods({
   'fetchNews'(tag) {
@@ -17,11 +17,11 @@ Meteor.methods({
 
   'getNewsByLocation'(location) {
     check(location, String);
-
     try {
       const newsData = getNewsByLocation(location);
       return newsData;
     } catch (error) {
+      console.log(error)
       throw new Meteor.Error('api-fetch-failed', `Failed to fetch news for location: ${location}`);
     }
   }

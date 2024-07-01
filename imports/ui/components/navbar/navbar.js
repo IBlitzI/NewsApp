@@ -3,6 +3,31 @@ import { Session } from 'meteor/session';
 import './navbar.html';
 import './navbar.css';
 
+Template.navbar.onCreated(function() {
+  // Initial fetch with 'general' tag
+  Meteor.call('fetchNews', 'general', (error, result) => {
+    if (error) {
+      console.error('Error fetching news:', error);
+    } else {
+      Session.set('newsData', result);
+    }
+  });
+
+  // Reactively fetch news when the tag changes
+  this.autorun(() => {
+    const tag = Session.get('currentTag');
+    if (tag) {
+      Meteor.call('fetchNews', tag, (error, result) => {
+        if (error) {
+          console.error('Error fetching news:', error);
+        } else {
+          Session.set('newsData', result);
+        }
+      });
+    }
+  });
+});
+
 Template.navbar.events({
   'click .nav-link'(event) {
     event.preventDefault();

@@ -1,4 +1,14 @@
 <template name="news">
+  <div class="navbar navbar2">
+    <a href="#" class="active">Latest Stories</a>
+    <a href="#">Think</a>
+    <a href="#">Health</a>
+    <!-- Navbar ikonlarını en sağa al -->
+    <div class="navbar-icons">
+      <a href="#" class="navbar-icon"><i class="fa fa-list-alt" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-8">
@@ -35,10 +45,12 @@
       </div>
       <div class="col-md-4">
         <div class="card mb-4">
+          <div class="live-indicator">
+            <span class="live-dot"></span>Live
+          </div>
           <img class="card-img-top" src="/assets/amca.png" alt="Dummy Image">
           <div class="card-body">
-            <h5 class="card-title">Dummy Title</h5>
-            <p class="card-text">This is a dummy description.</p>
+            <h5 class="card-title">Beloved Arizona coach loses battle with coronavirus</h5>
           </div>
         </div>
         {{> locationFilter}}
