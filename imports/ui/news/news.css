@@ -1,10 +1,16 @@
+.news-container{
+  
+  padding-left: 0;
+}
+
 .news-card {
   border-radius: 5px;
-  
+  margin-top: 0;
 }
 
 .card {
   margin-bottom: 20px;
+
   
 }
 
@@ -58,15 +64,15 @@
 
 
 .navbar2 {
-  background-color: #FFFFFF;
+  background-color: white;
   display: flex;
-  justify-content: space-between; /* İçerikleri sağa ve sola yasla */
+  justify-content: space-between; 
   align-items: center;
   padding: 12px 20px;
-  color: black; /* Metin rengini siyah yap */
+  color: black; 
   overflow: hidden;
-  width: 65%; /* Navbar genişliğini %30 yap */
-  /* margin-right özelliğini kaldır */
+  width: 65%; 
+  margin-top: 15px;
 }
 
 .navbar2 a {

@@ -7,7 +7,6 @@
   justify-content: center;
   height: 100%;
   font-family: IBM Plex Serif;
-  
 }
 
 .carousel-item {
@@ -16,30 +15,63 @@
 }
 
 .carousel-item img {
-  flex: 0 0 200px; /* Resmin genişliğini küçültüyoruz */
-  height: 150px; /* Resmin yüksekliğini küçültüyoruz */
-  object-fit: cover; /* Resmin içeriğini kapsamasını sağlıyoruz */
+  flex: 0 0 200px; /* Default width for larger screens */
+  height: 150px; /* Default height for larger screens */
+  object-fit: cover; /* Ensures the image content fits within the specified dimensions */
 }
 
 .carousel-item .carousel-caption {
   flex: 1;
   padding-left: 10px;
-  padding-top:0;
+  padding-top: 0;
 }
 
 .container .row {
   display: flex;
-  align-items: flex-start; /* Elemanların üst hizalanmasını sağlıyoruz */
+  align-items: flex-start; /* Ensures items are aligned at the top */
   justify-content: space-between;
 }
 
 .carousel-item .carousel-caption h5 {
-  font-size: 1em; /* Başlık boyutunu ayarlıyoruz */
-  margin-bottom: px;
+  font-size: 1em; /* Adjusts the heading size */
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
 .carousel-item .carousel-caption p {
-  font-size: 1em; /* Metin boyutunu ayarlıyoruz */
+  font-size: 1em; /* Adjusts the paragraph size */
   margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-item {
+    flex-direction: column; /* Stacks the items vertically on smaller screens */
+    align-items: center;
+  }
+
+  .carousel-item img {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    max-height: 200px; /* Optional: Adjust max height as needed */
+  }
+
+  .carousel-caption {
+    padding-left: 0;
+    text-align: center; /* Center align text on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    max-height: 150px; /* Adjust max height for extra small screens */
+  }
+
+  .carousel-caption h5 {
+    font-size: 0.875em; /* Smaller heading size for extra small screens */
+  }
+
+  .carousel-caption p {
+    font-size: 0.75em; /* Smaller paragraph size for extra small screens */
+  }
 }

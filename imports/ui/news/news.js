@@ -13,7 +13,19 @@ Template.registerHelper('truncate', function(text, length) {
 });
 
 Template.news.onCreated(function() {
-  this.viewMore = new ReactiveVar(false); 
+  this.viewMore = new ReactiveVar(false);
+  this.paging = new ReactiveVar(1); // Add a reactive variable to track the current paging
+
+  this.autorun(() => {
+    const paging = this.paging.get();
+    Meteor.call('fetchNews', 'general', paging, (error, result) => {
+      if (!error) {
+        let currentNewsData = Session.get('newsData') || [];
+        currentNewsData = currentNewsData.concat(result); // Concatenate new data
+        Session.set('newsData', currentNewsData);
+      }
+    });
+  });
 });
 
 Template.news.helpers({
@@ -21,7 +33,7 @@ Template.news.helpers({
     const newsData = Session.get('newsData');
     const viewMore = Template.instance().viewMore.get();
     if (Array.isArray(newsData)) {
-      return viewMore ? newsData : newsData.slice(0, 5); 
+      return viewMore ? newsData : newsData.slice(0, 5);
     }
     return [];
   },
@@ -38,6 +50,10 @@ Template.news.events({
   'click #view-more'(event, templateInstance) {
     event.preventDefault();
     const viewMore = templateInstance.viewMore.get();
-    templateInstance.viewMore.set(!viewMore); 
+    if (!viewMore) {
+      const currentPaging = templateInstance.paging.get();
+      templateInstance.paging.set(currentPaging + 1); // Increase the paging value
+    }
+    templateInstance.viewMore.set(!viewMore);
   }
 });

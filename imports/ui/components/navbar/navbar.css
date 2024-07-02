@@ -1,80 +1,91 @@
-/* Navbar genel stilleri */
+/* Navbar general styles */
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-/* Navbar içerik konteyneri */
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-/* Navbar marka/logo */
+/* Navbar brand/logo */
 .navbar-brand {
   display: flex;
   align-items: center;
 }
 
-/* Navbar logo boyutları */
 .navbar-logo {
   height: 42px;
   width: 47px;
 }
 
-/* Navbar öğeleri */
-.navbar-items {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: center;
-}
-
-/* Navbar öğe stilleri */
+/* Navbar items */
 .nav-item {
   margin: 0 15px;
   text-decoration: none;
-  font-family: 'Nunito Sans', sans-serif; /* Nunito Sans benzeri font */
-  color: black; /* Tag rengi siyah */
+  font-family: 'Nunito Sans', sans-serif; 
+  color: black;
 }
-.nav-item .nav-link {
-  color: black; /* Tag rengini siyah yap */
-  font-family: 'Nunito Sans', sans-serif; /* Yazı tipini Nunito Sans veya benzeri yap */
+
+.nav-link {
+  color: black;
   text-decoration: none;
   font-size: 85%;
 }
 
-/* Navbar öğe hover stilleri */
-.nav-item:hover {
+.nav-item:hover .nav-link {
   color: #000;
 }
 
-/* Navbar ikon konteyneri */
+/* Navbar icons */
 .navbar-icons {
   display: flex;
   align-items: center;
-  margin-left: auto; /* İkonları sağa yasla */
+  margin-left: auto; 
 }
 
-/* Navbar ikon stilleri */
 .nav-icon {
-  margin-left: 30px; /* İkonlar arası mesafe */
+  margin-left: 30px; 
   color: #000;
   text-decoration: none;
 }
 
-/* Navbar ikon font boyutu */
 .nav-icon i {
   font-size: 20px;
 }
 
-/* Navbar ikon hover stilleri */
 .nav-icon:hover {
   color: #000; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-nav {
+    margin-top: 10px;
+  }
+  .navbar-nav .nav-item {
+    margin: 0 5px;
+  }
+  .navbar-icons {
+    margin-top: 10px;
+  }
+  .navbar-icons .nav-icon {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  .navbar-nav {
+    flex-direction: column;
+  }
+  .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+  .navbar-icons {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .navbar-icons .nav-icon {
+    margin: 10px 0;
+  }
 }

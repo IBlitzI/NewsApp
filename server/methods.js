@@ -4,11 +4,11 @@ import { HTTP } from 'meteor/http';
 import { getNewsData,getNewsByLocation } from '../imports/api/newsApi.js';
 
 Meteor.methods({
-  'fetchNews'(tag) {
+  'fetchNews'(tag, paging) {
     check(tag, String);  
 
     try {
-      const newsData = getNewsData(tag);
+      const newsData = getNewsData(tag , paging);
       return newsData;
     } catch (error) {
       throw new Meteor.Error('api-fetch-failed', `Failed to fetch news data for tag: ${tag}`);
