@@ -7,3 +7,31 @@
 .footer a:hover {
   text-decoration: underline;
 }
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally centers the content */
+  text-align: center; /* Centers the text within the column */
+  margin-top: 3%; /* Add any margin you want to the top */
+}
+.logo p{
+  font-size: 12px;
+}
+.text-left{
+  font-size: 12px;
+  align-items: center;
+  margin-top: 1%;
+  padding-right: 0;
+  padding-left: 80px;
+}
+
+.text-right{
+  font-size: 12px;
+  padding-right:60px ;
+  margin-top: 20px;
+}
+.right-icon a{
+  text-align: center;
+  padding-left: 7%;
+  margin-right: 7px;
+}

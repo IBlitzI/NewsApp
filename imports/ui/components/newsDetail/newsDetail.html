@@ -1,0 +1,44 @@
+<template name="newsDetail">
+    {{> navbar}}
+  
+    <div class="container mt-4 news-container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card mb-4 news-card">
+            <img src="{{image}}" class="card-img-top" alt="News Image">
+            <div class="card-body">
+              <h1 class="card-title">{{title}}</h1>
+              <p class="card-text">{{content}}</p>
+            </div>
+            <div class="card-footer text-muted">
+              <div class="d-flex justify-content-between align-items-center">
+                <small>{{publishedAt}}</small>
+                <div class="d-flex align-items-center">
+                  <span class="mr-2">{{source.name}}</span>
+                  {{#if author}}
+                    <span>by {{author}}</span>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="live-indicator">
+              <span class="live-dot"></span>Live
+            </div>
+            <img class="card-img-top" src="/assets/amca.png" alt="Dummy Image">
+            <div class="card-body">
+              <h5 class="card-title">Beloved Arizona coach loses battle with coronavirus</h5>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+  
+    {{> footer}}
+  </template>
+  

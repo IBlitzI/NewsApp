@@ -1,67 +1,72 @@
 .article-preview-container {
-    padding-top: 1rem;
-  }
-  
-  .article-preview-main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 1rem;
-  }
-  
+  padding-top: 1rem;
+}
+
+.article-preview-main {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.article-preview-image-container {
+  flex: 1 1 100%; /* Ensures the image takes full width on smaller screens */
+  max-width: 370px; /* Maintains maximum width */
+}
+
+.article-preview-image {
+  width: 100%;
+  height: auto; /* Ensures the image scales correctly */
+  max-height: 270px; /* Ensures the image height doesn't exceed 270px */
+}
+
+.article-preview-text-container {
+  flex: 2 1 100%; /* Ensures the text takes full width on smaller screens */
+}
+
+.article-preview-title {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-preview-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+.article-preview-meta {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.breaking-news {
+  padding: 1rem;
+  background-color: #C31815;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.breaking-news-container {
+  background-color: white;
+  padding: 0.2rem 0.5rem;
+  color: #C31815;
+  font-size: 1.25rem;
+  margin-right: 1rem; 
+}
+
+.article-preview-breaking-text {
+  font-size: 1rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
   .article-preview-image-container {
-    margin-right: 1rem;
-  }
-  
-  .article-preview-image {
-    width: auto;
-    max-height: 200px;
-  }
-  
-  .article-preview-text-container {
-    flex-grow: 1;
-  }
-  
-  .article-preview-title {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .article-preview-text {
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .article-preview-meta {
-    font-size: 0.875rem;
-    color: #666;
-  }
-  
-  .breaking-news {
-    padding: 1rem;
-    background-color: #C31815;
-    justify-content: center;
-    flex: 1;
+    flex: 0 0 370px; /* Maintains the width on larger screens */
   }
 
-  
-  .breaking-news-container {
-    background-color: white ;
-    padding: 0.2rem 0.5rem;
-    color: #C31815;
-    font-size: 1.25rem;
-   
+  .article-preview-text-container {
+    flex: 1; /* Takes the remaining space on larger screens */
   }
-  .article-preview-breaking {
-    font-size: 1.25rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    
-  }
-  
-  .article-preview-breaking-text {
-    font-size: 1rem;
-    color:white;
-   
-  }
+}

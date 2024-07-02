@@ -27,3 +27,4 @@ blaze-hot               # Update files using Blaze's API with HMR
 http
 session
 check
+iron:router

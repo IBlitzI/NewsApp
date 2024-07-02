@@ -1,9 +1,10 @@
 import { HTTP } from 'meteor/http';
+import { Mongo } from 'meteor/mongo';
 
 const API_KEY = '1Noer8MT9AohiaGWe56pbk:77xWoDbR7HQvo4Dtfb2bNJ';
 const BASE_URL = 'https://api.collectapi.com/news/getNews';
 
-export const getNewsData = (tag) => {
+export const getNewsData = (tag,paging) => {
   try {
     const response = HTTP.call('GET', BASE_URL, {
       headers: {
@@ -12,7 +13,8 @@ export const getNewsData = (tag) => {
       },
       params: {
         country: 'tr',
-        tag: tag
+        tag: tag,
+        paging: paging
         
         
       }
@@ -51,3 +53,5 @@ export const getNewsByLocation = (location) => {
     throw new Meteor.Error('api-fetch-failed', error.message);
   }
 };
+
+export const NewsCollection = new Mongo.Collection('news');
