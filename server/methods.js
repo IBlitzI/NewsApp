@@ -5,7 +5,8 @@ import { getNewsData,getNewsByLocation } from '../imports/api/newsApi.js';
 
 Meteor.methods({
   'fetchNews'(tag, paging) {
-    check(tag, String);  
+    check(tag, String);
+    check(paging, Number)  
 
     try {
       const newsData = getNewsData(tag , paging);

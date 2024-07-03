@@ -1,6 +1,6 @@
 import { HTTP } from 'meteor/http';
 
-const API_KEY = '1Noer8MT9AohiaGWe56pbk:77xWoDbR7HQvo4Dtfb2bNJ';
+const API_KEY = '6eXaUprjwHojqwWqYWxzo4:7gdQKtffV7CDH2EPueNIKo';
 const BASE_URL = 'https://api.collectapi.com/news/getNews';
 
 export const getNewsData = (tag,paging) => {
