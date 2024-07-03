@@ -4,7 +4,6 @@ import './navbar.html';
 import './navbar.css';
 
 Template.navbar.onCreated(function() {
-  // Initial fetch with 'general' tag
   Meteor.call('fetchNews', 'general', (error, result) => {
     if (error) {
       console.error('Error fetching news:', error);
@@ -17,6 +16,7 @@ Template.navbar.onCreated(function() {
   this.autorun(() => {
     const tag = Session.get('currentTag');
     if (tag) {
+      
       Meteor.call('fetchNews', tag, (error, result) => {
         if (error) {
           console.error('Error fetching news:', error);
@@ -32,7 +32,6 @@ Template.navbar.events({
   'click .nav-link'(event) {
     event.preventDefault();
     const tag = event.currentTarget.getAttribute('data-tag');
-    
     if (tag) {
       Meteor.call('fetchNews', tag, (error, result) => {
         if (error) {

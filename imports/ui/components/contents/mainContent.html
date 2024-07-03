@@ -1,0 +1,11 @@
+<template name="mainContent">
+    {{> navbar}}
+    {{#if isDetailView}}
+      {{> newsDetail}}
+    {{else}}
+      {{> articlePreview}}
+      {{> news}}
+      {{> dummySlider}}
+    {{/if}}
+    {{> footer}}
+  </template>
