@@ -1,5 +1,4 @@
-.news-container{
-  
+.news-container {
   padding-left: 0;
 }
 
@@ -10,8 +9,6 @@
 
 .card {
   margin-bottom: 20px;
-
-  
 }
 
 .card-title {
@@ -23,21 +20,16 @@
   font-size: 1rem;
 }
 
-.btn-danger {
-  background-color: #dc3545;
-  border-color: #dc3545;
-}
-
 .dummy-card {
   margin-bottom: 20px;
   position: relative;
-  z-index: 0;
 }
 
 .dummy-card img {
   height: 200px;
   object-fit: cover;
 }
+
 .live-indicator {
   position: absolute;
   top: 10px;
@@ -49,9 +41,8 @@
   color: red;
   display: flex;
   align-items: center;
-  z-index: 1; 
+  z-index: 1;
 }
-
 
 .live-dot {
   height: 10px;
@@ -62,23 +53,22 @@
   margin-right: 5px;
 }
 
-
 .navbar2 {
   background-color: white;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  color: black; 
+  color: black;
   overflow: hidden;
-  width: 65%; 
+  width: 65%;
   margin-top: 15px;
 }
 
 .navbar2 a {
   text-decoration: none;
   color: black;
-  margin-right: 25px; /* Bağlantılar arasında boşluk */
+  margin-right: 25px;
   font-weight: bolder;
   font-family: sans-serif;
 }
@@ -91,7 +81,6 @@
   border-bottom: 2px solid red;
 }
 
-/* Navbar ikonlarını sağa yasla */
 .navbar-icons {
   display: flex;
   align-items: center;
@@ -101,4 +90,3 @@
   color: black;
   text-decoration: none;
 }
-

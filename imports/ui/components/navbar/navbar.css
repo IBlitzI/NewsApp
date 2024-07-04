@@ -1,11 +1,11 @@
-/* Navbar general styles */
+
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
 }
 
-/* Navbar brand/logo */
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@
   color: #000; 
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 992px) {
   .navbar-nav {
     margin-top: 10px;

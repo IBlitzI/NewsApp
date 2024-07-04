@@ -1,6 +1,6 @@
-import { HTTP } from 'meteor/http';
+import { Meteor } from 'meteor/meteor';
 
-const API_KEY = '6eXaUprjwHojqwWqYWxzo4:7gdQKtffV7CDH2EPueNIKo';
+const API_KEY = Meteor.settings.private.apiKey;
 const BASE_URL = 'https://api.collectapi.com/news/getNews';
 
 export const getNewsData = (tag,paging) => {
