@@ -1,0 +1,23 @@
+<template name="relatedTopics">
+    <h5 style="margin-top: 25px;">Related Topics</h5>
+    <div class="row">
+        {{#each topics}}
+        <div class="col-md-3 custom-col">
+            <div class="card mb-4">
+                <img src="{{image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <i class="fa fa-heart"></i> {{likes}}
+                        <i class="fa fa-comment ml-3"></i> {{comments}}
+                        <i class="fa fa-bookmark ml-3"></i>
+                    </small>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</template>
