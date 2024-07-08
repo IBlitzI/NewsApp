@@ -12,4 +12,10 @@ import '../imports/ui/components/dummyVariable/dummySlider.html'
 import '../imports/ui/components/dummyVariable/dummySlider.css';
 import '../imports/ui/components/contents/mainContent.html';
 import '../imports/ui/components/contents/mainContent.js';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import '@fortawesome/fontawesome-free'
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
 

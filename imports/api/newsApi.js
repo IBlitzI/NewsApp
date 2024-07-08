@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
 const API_KEY = Meteor.settings.private.apiKey;
-const BASE_URL = 'https://api.collectapi.com/news/getNews';
+const BASE_URL = Meteor.settings.private.apiUrl;
 
 export const getNewsData = (tag,paging) => {
   try {
@@ -23,7 +23,6 @@ export const getNewsData = (tag,paging) => {
       throw new Error(`API returned status code ${response.statusCode}`);
     }
 
-    // Sadece result dizisini döndür
     return response.data.result;
   } catch (error) {
     console.error('Error fetching news data:', error);

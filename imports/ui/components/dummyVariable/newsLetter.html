@@ -1,39 +1,40 @@
 <template name="newsletter">
-  <div class="card mb-4 shadow-sm" style="max-width: 600px; margin: auto;">
+  <div class="card mb-4 shadow-sm" style="max-width: 600px; margin: auto; border: none;">
     <div class="card-body">
       <h5 class="card-title" style="font-size: 1.25rem;">Sign up for The NBC News Newsletter</h5>
-      <p class="card-text" style="color:gray">By Caroline Casey</p>
+      <p class="card-text" style="color: gray;">By Caroline Casey</p>
       <p class="card-text">
         A weekly, ad-free newsletter that helps 786,000+ readers stay in the know, be productive, and think more critically about the world.
         <a href="#" class="text-primary">Take a look</a>
       </p>
-      <a href="#" class="btn btn-danger btn-block">Get this newsletter</a>
+      <a href="#" class="btn btn-danger btn-block" style="background-color: #c70039; border: none;">Get this newsletter</a>
     </div>
   </div>
 
   <div class="mb-4 text-center">
-    <span class="badge badge-pill badge-light p-2 m-1" style="background-color: #ffd6d6;">NBCBLK</span>
-    <span class="badge badge-pill badge-light p-2 m-1" style="background-color: #ffd6d6;">TRENDING</span>
-    <span class="badge badge-pill badge-light p-2 m-1" style="background-color: #ffd6d6;">LEWIS</span>
-    <span class="badge badge-pill badge-light p-2 m-1" style="background-color: #ffd6d6;">FREEBIE</span>
+    <span class="badge badge-pill p-2 m-1" style="background-color: #ffd6d6; color: #c70039;">NBCBLK</span>
+    <span class="badge badge-pill p-2 m-1" style="background-color: #ffd6d6; color: #c70039;">TRENDING</span>
+    <span class="badge badge-pill p-2 m-1" style="background-color: #ffd6d6; color: #c70039;">LEWIS</span>
+    <span class="badge badge-pill p-2 m-1" style="background-color: #ffd6d6; color: #c70039;">FREEBIE</span>
   </div>
 
-  <div class="d-flex justify-content-between align-items-center mb-4" style="max-width: 600px; margin: auto;">
+  <div class="d-flex justify-content-between align-items-center mb-4" style="max-width: 600px; margin: auto; color: #888;">
     <div>
       <span class="mr-3"><i class="fa fa-heart"></i> 28</span>
-      <span class="mr-3"><i class="fa fa-comment"></i> 21 responses</span>
+      <span><i class="fa fa-comment"></i> 21 responses</span>
     </div>
     <div>
       <span class="mr-3"><i class="fa fa-share"></i> 72</span>
       <span><i class="fa fa-bookmark"></i></span>
+      <span class="ml-3"><i class="fa fa-ellipsis-h"></i></span>
     </div>
   </div>
 
-  <hr style="max-width: 600px; margin: auto;">
+  <hr style="max-width: 600px; margin: auto; border-top: 1px solid #eee;">
 
-  <div class="media" style="max-width: 600px; margin: auto;">
-    <img src="/assets/newsLetter.png" alt="Author Image" class="mr-3 rounded-circle" style="margin-top: 15px;">
-    <div class="media-body">
+  <div class="media" style="max-width: 600px; margin: auto; display: flex; align-items: center;">
+    <img src="/assets/newsLetter.png" alt="Author Image" class="mr-3 rounded-circle" style="width: 85px; height: 85px; object-fit: cover;">
+    <div class="media-body" style="flex: 1;padding-left:25px;">
       <h6 class="mt-1 text-muted" style="font-weight: bold; margin-bottom: 0;">Author</h6>
       <h5 class="mt-1" style="font-size: 1.1rem; font-weight: bold;">Caroline Casey</h5>
       <p>
@@ -42,7 +43,7 @@
         a global movement aimed at getting 500 companies to commit to disability inclusion.
       </p>
     </div>
-    <button class="btn btn-outline-danger btn-sm" style="display: flex; align-items: center; margin-top: 8%; width: 90px; height: 30px; font-size: medium; padding-left: 12px;">
+    <button class="btn btn-outline-danger btn-sm" style="display: flex; align-items: center; height: 30px; font-size: medium;margin-left:15px">
       <i class="fab fa-twitter"></i> Follow
     </button>
   </div>

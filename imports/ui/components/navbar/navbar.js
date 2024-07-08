@@ -37,6 +37,7 @@ Template.navbar.events({
         if (error) {
           console.error('Error fetching news:', error);
         } else {
+          
           console.log(result)
           Session.set('newsData', result);
         }

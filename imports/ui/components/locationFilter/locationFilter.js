@@ -11,6 +11,7 @@ Template.locationFilter.events({
         if (error) {
           console.error(error);
         } else {
+          console.log(result)
           Session.set('newsData', result)
         }
       });
