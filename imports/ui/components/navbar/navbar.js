@@ -12,11 +12,10 @@ Template.navbar.onCreated(function() {
     }
   });
 
-  // Reactively fetch news when the tag changes
   this.autorun(() => {
     const tag = Session.get('currentTag');
     if (tag) {
-      
+      console.log(tag)
       Meteor.call('fetchNews', tag, 0, (error, result) => {
         if (error) {
           console.error('Error fetching news:', error);
@@ -33,15 +32,7 @@ Template.navbar.events({
     event.preventDefault();
     const tag = event.currentTarget.getAttribute('data-tag');
     if (tag) {
-      Meteor.call('fetchNews', tag, 0, (error, result) => {
-        if (error) {
-          console.error('Error fetching news:', error);
-        } else {
-          
-          console.log(result)
-          Session.set('newsData', result);
-        }
-      });
+      Session.set('currentTag', tag);
     } else {
       console.error('Tag is null or undefined');
     }

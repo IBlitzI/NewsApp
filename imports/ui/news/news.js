@@ -27,7 +27,12 @@ Template.news.onCreated(function () {
     Meteor.call('fetchNews', 'general', paging, (error, result) => {
       if (!error) {
         let currentNewsData = Session.get('newsData') || [];
-        currentNewsData = currentNewsData.concat(result);
+        //paging arttığında key'ler tekrar 0 dan başladığı için detay sayfasına yönlendirmek için unique key veriyorum.
+        const uniqueResult = result.map(item => ({
+          ...item,
+          uniqueKey: `${item.key}-${paging}-${Math.random().toString(36).substr(2, 9)}` 
+        }));
+        currentNewsData = currentNewsData.concat(uniqueResult);
         Session.set('newsData', currentNewsData);
       }
     });
@@ -39,7 +44,7 @@ Template.news.helpers({
     const newsData = Session.get('newsData');
     const viewMore = Template.instance().viewMore.get();
     if (Array.isArray(newsData)) {
-      return viewMore ? newsData : newsData.slice(0, 5);
+      return viewMore ? newsData : newsData.slice(0, 4);
     }
     return [];
   },
@@ -47,26 +52,20 @@ Template.news.helpers({
     const newsData = Session.get('newsData');
     return Array.isArray(newsData) && newsData.length > 4;
   },
-  viewMoreText() {
-    return Template.instance().viewMore.get() ? 'View Less' : 'View More';
-  }
 });
 
 Template.news.events({
   'click #view-more'(event, templateInstance) {
     event.preventDefault();
-    const viewMore = templateInstance.viewMore.get();
-    if (!viewMore) {
-      const currentPaging = templateInstance.paging.get();
-      templateInstance.paging.set(currentPaging + 1);
-    }
-    templateInstance.viewMore.set(!viewMore);
+    const currentPaging = templateInstance.paging.get();
+    templateInstance.paging.set(currentPaging + 1);
+    templateInstance.viewMore.set(true);  
   },
   'click .news-card'(event) {
     event.preventDefault();
     const newsKey = event.currentTarget.dataset.id;
     const newsData = Session.get('newsData');
-    const selectedNewsItem = newsData.find(item => item.key === newsKey);
+    const selectedNewsItem = newsData.find(item => item.uniqueKey === newsKey); 
     if (selectedNewsItem) {
       Session.set('selectedNewsItem', selectedNewsItem);
       Session.set('isDetailView', true);

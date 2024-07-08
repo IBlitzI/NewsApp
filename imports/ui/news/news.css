@@ -17,13 +17,13 @@
 .card-title {
   font-size: 1.25rem;
   font-weight: bold;
-  height: 5rem; /* Fixed height for title */
-  overflow: hidden; /* Ensure text doesn't overflow */
+  height: 5rem; 
+  overflow: hidden; 
 }
 
 .card-text {
   font-size: 1rem;
-  flex-grow: 1; /* Ensure text section takes available space */
+  flex-grow: 1; 
   overflow: hidden;
 }
 
