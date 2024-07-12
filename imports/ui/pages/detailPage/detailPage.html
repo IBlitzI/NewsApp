@@ -1,0 +1,11 @@
+<template name="detailPage">
+  {{> navbar}}
+  {{#if selectedNewsItem}}
+    {{> newsDetail}}
+  {{else}}
+    <p>Loading...</p>
+  {{/if}}
+  {{> newsletter}}
+  {{> relatedTopics}}
+  {{> footer}}
+</template>

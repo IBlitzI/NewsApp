@@ -67,14 +67,7 @@ Template.news.events({
   'click .news-card'(event) {
     event.preventDefault();
     const newsKey = event.currentTarget.dataset.id;
-    const newsData = Session.get('newsData');
-    
-    const selectedNewsItem = newsData.find(item => item.key === newsKey); 
-    console.log('Clicked news key:', newsKey);
-    console.log('Selected news item:', selectedNewsItem);
-    if (selectedNewsItem) {
-      Session.set('selectedNewsItem', selectedNewsItem);
-      Session.set('isDetailView', true);
-    }
+    console.log(newsKey)
+    FlowRouter.go('detail', { id: newsKey });
   }
 });

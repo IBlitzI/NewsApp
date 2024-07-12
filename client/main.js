@@ -10,8 +10,6 @@ import '../imports/ui/components/dummyVariable/articlePreview/articlePreview.htm
 import '../imports/ui/components/dummyVariable/articlePreview/articlePreview.css';
 import '../imports/ui/components/footer/footer.html';
 import '../imports/ui/components/footer/footer.css';
-import '../imports/ui/components/contents/mainContent.html';
-import '../imports/ui/components/contents/mainContent.js';
 import '../imports/ui/components/newsDetail/newsDetail.html';
 import '../imports/ui/components/newsDetail/newsDetail.css';
 import '../imports/ui/components/newsDetail/newsDetail.js';
@@ -20,5 +18,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import '../imports/ui/routes.js'
+import '../imports/ui/layouts/mainLayout.html'
 
 
