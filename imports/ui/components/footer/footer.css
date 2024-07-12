@@ -1,37 +1,48 @@
 .footer {
   padding: 20px 0;
 }
+
 .footer a {
   text-decoration: none;
 }
+
 .footer a:hover {
   text-decoration: underline;
 }
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  text-align: center; 
-  margin-top: 3%; 
-}
-.logo p{
-  font-size: 12px;
-}
-.text-left{
-  font-size: 12px;
+
+.logo img {
+  width: 32px;
+  margin-left: 45%;
   align-items: center;
-  margin-top: 1%;
-  padding-right: 0;
-  padding-left: 80px;
+  padding-right: 0%;
 }
 
-.text-right{
+.logo p {
   font-size: 12px;
-  padding-right:60px ;
-  margin-top: 20px;
-}
-.right-icon a{
   text-align: center;
-  padding-left: 7%;
-  margin-right: 7px;
+  margin-bottom: 0%;
+}
+
+.text-left,
+.text-center,
+.text-right {
+  font-size: 12px;
+  align-items: center;
+}
+
+.text-center {
+  margin-top: 1%;
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.text-right {
+  margin-top: 20px;
+  padding-left: 10%;
+}
+
+.right-icon a {
+  text-align: center;
+  margin-right: 0;
+  padding-left: 10%;
 }

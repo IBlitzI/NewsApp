@@ -1,7 +1,7 @@
 {
   "private": {
     "apiKey": "5wn36ZY7gcQKekWawny8Up:3MWv8A3QbHMe7P1zYMr8T8",
-    "apiUrl": "https://api.collectapi.com/news/getNews"
+    "apiUrl": "https://api.collectapi.com/news"
     
   }
 }

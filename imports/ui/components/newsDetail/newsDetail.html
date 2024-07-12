@@ -1,65 +1,64 @@
 <template name="newsDetail">
   {{#with selectedNewsItem}}
-    <div class="container mt-4 news-container">
-      <div class="top-section" style="background-color: #0b2545; color: white; padding: 2% 50px 20% 20px;">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="text-center">{{name}}</h1>
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="image-section text-center" style="margin-top: -210px; position: relative;">
-        <img src="{{image}}" class="top-image img-fluid" alt="News Image" style="width: 80%; height: 450px; object-fit: fill; border-radius: 5px;">
-        <small class="text-dark d-block mt-2" style="position: absolute; bottom: -5%; right: 67%;">{{date}} / {{source}}</small>
-      </div>
-
-      <div class="content-section mt-4">
-        <div class="row">
-          <div class="col-md-1">
-            <div class="d-flex flex-column justify-content-start mt-4">
-              <div><i class="fa fa-heart text-danger" style="font-size: 1.5rem;"></i> 28</div>
-              <div><i class="fa fa-comment" style="font-size: 1.5rem;"></i> 21</div>
-              <div><i class="fa fa-share" style="font-size: 1.5rem;"></i></div>
-              <div><i class="fa fa-bookmark" style="font-size: 1.5rem;"></i></div>
-            </div>
-          </div>
-
-          <!-- News Content Section -->
-          <div class="col-md-7 mt-3" style="right:150px">
-            <div class="news-content">
-              <p style="margin-bottom: 20px;padding-left:15px">{{description}}</p>
-            </div>
-          </div>
-          
-          <!-- Dummy News Section on the Right -->
-          <div class="col-md-3" style="padding-right:30px">
-            <h5>Recommended for you</h5>
-            <div class="dummy-news">
-              <div class="card mb-4">
-                <img src="/assets/dummyNews1.png" class="card-img-top" alt="Dummy Image 1" style="width: 100%; height: 150px; object-fit: fill;">
-                <div class="card-body">
-                  <h6 class="card-title" style="font-size: medium;">Millions rely on emergency pandemic benefits for rent, food, and medicine. Now, that lifeline could disappear.</h6>
-                </div>
-              </div>
-              <h5>Based on Like</h5>
-              <div class="card mb-4">
-                <img src="/assets/dummyNews2.png" class="card-img-top" alt="Dummy Image 2" style="width: 100%; height: 150px; object-fit: fill;">
-                <div class="card-body">
-                  <h6 class="card-title" style="font-size: medium;">The ADA is turning 30. It's time that it included digital accessibility.</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-12 text-center mt-4">
-            <button class="btn btn-primary back-to-news" style="margin-top: 20px;">Back to News</button>
-          </div>
+  <div class="container mt-4 news-container">
+    <div class="top-section news-top-section">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center">{{name}}</h1>
         </div>
       </div>
     </div>
+
+    <div class="image-section text-center news-image-section">
+      <img src="{{image}}" class="top-image img-fluid" alt="News Image">
+      <small class="text-dark d-block mt-2 news-date-source">{{date}} / {{source}}</small>
+    </div>
+
+    <div class="content-section mt-4">
+      <div class="row">
+        <div class="col-md-1">
+          <div class="d-flex flex-column justify-content-start mt-4 news-icons">
+            <div><i class="fa fa-heart text-danger"></i> 28</div>
+            <div><i class="fa fa-comment"></i> 21</div>
+            <div><i class="fa fa-share"></i></div>
+            <div><i class="fa fa-bookmark"></i></div>
+          </div>
+        </div>
+
+        <div class="col-md-7 mt-3 news-content-section">
+          <div class="news-content">
+            <p>{{description}}</p>
+          </div>
+        </div>
+
+        <!-- Dummy News Section on the Right -->
+        <div class="col-md-3 dummy-news-section">
+          <h5>Recommended for you</h5>
+          <div class="dummy-news">
+            <div class="card mb-4">
+              <img src="/assets/dummyNews1.png" class="card-img-top" alt="Dummy Image 1">
+              <div class="card-body">
+                <h6 class="card-title">Millions rely on emergency pandemic benefits for rent, food, and medicine. Now,
+                  that lifeline could disappear.</h6>
+              </div>
+            </div>
+            <h5>Based on Like</h5>
+            <div class="card mb-4">
+              <img src="/assets/dummyNews2.png" class="card-img-top" alt="Dummy Image 2">
+              <div class="card-body">
+                <h6 class="card-title">The ADA is turning 30. It's time that it included digital accessibility.</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 text-center mt-4">
+          <button class="btn btn-primary back-to-news">Back to News</button>
+        </div>
+      </div>
+    </div>
+  </div>
   {{/with}}
 </template>

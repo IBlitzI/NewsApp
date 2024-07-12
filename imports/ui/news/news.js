@@ -4,7 +4,8 @@ import './news.html';
 import './news.css';
 import '../components/locationFilter/locationFilter.html';
 import '../components/locationFilter/locationFilter.js';
-import moment from 'moment'; 
+import '../components/loading/loading.html';
+import moment from 'moment';
 
 Template.registerHelper('truncate', function (text, length) {
   if (text.length > length) {
@@ -14,32 +15,34 @@ Template.registerHelper('truncate', function (text, length) {
 });
 
 Template.registerHelper('formatDate', function (date) {
-  return moment(date).fromNow(); 
+  return moment(date).fromNow();
 });
 
 Template.news.onCreated(function () {
   Session.setDefault('isDetailView', false);
   this.viewMore = new ReactiveVar(false);
   this.paging = new ReactiveVar(1);
+  this.isLoading = new ReactiveVar(true);
 
   this.autorun(() => {
     const paging = this.paging.get();
+    this.isLoading.set(true);
     Meteor.call('fetchNews', 'general', paging, (error, result) => {
       if (!error) {
         let currentNewsData = Session.get('newsData') || [];
-        //paging arttığında key'ler tekrar 0 dan başladığı için detay sayfasına yönlendirmek için unique key veriyorum.
-        const uniqueResult = result.map(item => ({
-          ...item,
-          uniqueKey: `${item.key}-${paging}-${Math.random().toString(36).substr(2, 9)}` 
-        }));
-        currentNewsData = currentNewsData.concat(uniqueResult);
+
+        currentNewsData = currentNewsData.concat(result); 
         Session.set('newsData', currentNewsData);
       }
+      this.isLoading.set(false);
     });
   });
 });
 
 Template.news.helpers({
+  isLoading() {
+    return Template.instance().isLoading.get() || Session.get('isNavbarLoading');
+  },
   newsItems() {
     const newsData = Session.get('newsData');
     const viewMore = Template.instance().viewMore.get();
@@ -59,13 +62,16 @@ Template.news.events({
     event.preventDefault();
     const currentPaging = templateInstance.paging.get();
     templateInstance.paging.set(currentPaging + 1);
-    templateInstance.viewMore.set(true);  
+    templateInstance.viewMore.set(true);
   },
   'click .news-card'(event) {
     event.preventDefault();
     const newsKey = event.currentTarget.dataset.id;
     const newsData = Session.get('newsData');
-    const selectedNewsItem = newsData.find(item => item.uniqueKey === newsKey); 
+    
+    const selectedNewsItem = newsData.find(item => item.key === newsKey); 
+    console.log('Clicked news key:', newsKey);
+    console.log('Selected news item:', selectedNewsItem);
     if (selectedNewsItem) {
       Session.set('selectedNewsItem', selectedNewsItem);
       Session.set('isDetailView', true);

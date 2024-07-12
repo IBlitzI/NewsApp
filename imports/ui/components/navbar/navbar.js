@@ -15,13 +15,14 @@ Template.navbar.onCreated(function() {
   this.autorun(() => {
     const tag = Session.get('currentTag');
     if (tag) {
-      console.log(tag)
+      Session.set('isNavbarLoading', true);
       Meteor.call('fetchNews', tag, 0, (error, result) => {
         if (error) {
           console.error('Error fetching news:', error);
         } else {
           Session.set('newsData', result);
         }
+        Session.set('isNavbarLoading', false);
       });
     }
   });

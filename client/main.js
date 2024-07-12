@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import '../imports/ui/components/dummyVariable/dummySlider/dummySlider.html'
+import '../imports/ui/components/dummyVariable/dummySlider/dummySlider.css'
 import '../imports/ui/components/navbar/navbar.js';
 import '../imports/ui/news/news.js';
 import './main.html';
@@ -8,9 +10,11 @@ import '../imports/ui/components/dummyVariable/articlePreview/articlePreview.htm
 import '../imports/ui/components/dummyVariable/articlePreview/articlePreview.css';
 import '../imports/ui/components/footer/footer.html';
 import '../imports/ui/components/footer/footer.css';
-import '../imports/ui/components/dummyVariable/dummySlider/dummySlider.html'
 import '../imports/ui/components/contents/mainContent.html';
 import '../imports/ui/components/contents/mainContent.js';
+import '../imports/ui/components/newsDetail/newsDetail.html';
+import '../imports/ui/components/newsDetail/newsDetail.css';
+import '../imports/ui/components/newsDetail/newsDetail.js';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free'
